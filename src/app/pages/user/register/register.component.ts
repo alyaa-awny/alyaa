@@ -57,11 +57,9 @@ export class RegisterComponent implements OnInit {
       .subscribe(
         (res)=> { console.log(res)},
         (err)=>{console.log(err.error.data)},
-        ()=> {
-          console.log("done")
-          this._route.navigate(["/"])
-          // this._route.navigateByUrl("/")
-        }
+        ()=> this._route.navigateByUrl("/activate")
+          
+        
         
         )
     }

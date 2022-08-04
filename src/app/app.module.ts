@@ -15,6 +15,7 @@ import { CardComponent } from './shared/user/card/card.component';
 import { AllComponent } from './pages/user/all/all.component';
 import { LogoutComponent } from './pages/user/logout/logout.component';
 import { ProfileComponent } from './pages/user/profile/profile.component';
+import { ActivateComponent } from './pages/user/activate/activate.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ProfileComponent } from './pages/user/profile/profile.component';
     CardComponent,
     AllComponent,
     LogoutComponent,
-    ProfileComponent
+    ProfileComponent,
+    ActivateComponent
   ],
   imports: [
     BrowserModule,
