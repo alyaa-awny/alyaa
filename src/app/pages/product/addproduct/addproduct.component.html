@@ -1,0 +1,73 @@
+<section class="my-5 container">
+    <h2  class="text-center text-primary mb-3">Add Product</h2>
+    <div *ngIf="msg" class="alert alert-danger mb-3">{{msg}}</div>
+    <form [formGroup]="addProduct" (ngSubmit)="AddProduct()">
+        <div class="mb-3">
+            <input class="form-control" formControlName="name" placeholder="name">
+            <div class="alert alert-danger my-2" *ngIf="name?.invalid && (isSubmitted || name?.dirty || name?.touched)">
+                <li *ngIf="name?.errors?.['required']">required</li>
+                <li *ngIf="name?.errors?.['minlength']">min length 3 chars</li>
+                <li *ngIf="name?.errors?.['maxlength']">max length 10 chars</li>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" formControlName="quantity" placeholder="quantity">
+            <div class="alert alert-danger my-2" *ngIf="quantity?.invalid  && (isSubmitted || quantity?.dirty || quantity?.touched)">
+                <li *ngIf="quantity?.errors?.['required']">required</li>
+            </div>
+        </div>
+       
+        <div class="mb-3">
+            <input class="form-control" formControlName="description" placeholder="description">
+            <div class="alert alert-danger my-2" *ngIf="description?.invalid && (isSubmitted || description?.dirty || description?.touched)">
+                <li *ngIf="description?.errors?.['required']">required</li>
+                <li *ngIf="description?.errors?.['minlength']">min length 10 chars</li>
+                <li *ngIf="description?.errors?.['maxlength']">max length 20 chars</li>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" formControlName="image" placeholder="image">
+            <div class="alert alert-danger my-2" *ngIf="image?.invalid && (isSubmitted || image?.dirty || image?.touched)">
+                <li *ngIf="image?.errors?.['required']">required</li>
+                <li *ngIf="image?.errors?.['minlength']">min length 3 chars</li>
+                <li *ngIf="image?.errors?.['maxlength']">max length 10 chars</li>
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <input class="form-control" formControlName="color" placeholder="color">
+            <div  class="alert alert-danger my-2" *ngIf="color?.invalid && (isSubmitted || color?.dirty || color?.touched)">
+                <li *ngIf="color?.errors?.['required']">required</li>
+                <li *ngIf="color?.errors?.['minlength']">min length 3 chars</li>
+                <li *ngIf="color?.errors?.['maxlength']">max length 10 chars</li>   
+            </div>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" formControlName="size" placeholder="size">
+            <div class="alert alert-danger my-2" *ngIf="size?.invalid && (isSubmitted || size?.dirty || size?.touched)">
+                <li *ngIf="size?.errors?.['required']">required</li> 
+                <li *ngIf="size?.errors?.['minlength']">min length 3 chars</li>
+                <li *ngIf="size?.errors?.['maxlength']">max length 10 chars</li>   
+            </div>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" formControlName="categories" placeholder="categories">
+            <div class="alert alert-danger my-2" *ngIf="categories?.invalid && (isSubmitted || categories?.dirty || categories?.touched)">
+                <li *ngIf="categories?.errors?.['required']">required</li> 
+                <li *ngIf="categories?.errors?.['minlength']">min length 3 chars</li>
+                <li *ngIf="categories?.errors?.['maxlength']">max length 10 chars</li>   
+            </div>
+        </div>
+        <div class="mb-3">
+            <input class="form-control" formControlName="price" placeholder="price">
+            <div class="alert alert-danger my-2" *ngIf="price?.invalid && (isSubmitted || price?.dirty || price?.touched)">
+                <li *ngIf="price?.errors?.['required']">required</li> 
+                   
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <button class="btn btn-primary" >Add Product </button>
+        </div>
+    </form>
+</section>
