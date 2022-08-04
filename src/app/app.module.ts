@@ -11,6 +11,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { ReactiveFormsModule , FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AddproductComponent } from './pages/product/addproduct/addproduct.component';
+import { CardComponent } from './shared/user/card/card.component';
+import { AllComponent } from './pages/user/all/all.component';
+import { LogoutComponent } from './pages/user/logout/logout.component';
+import { ProfileComponent } from './pages/user/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { AddproductComponent } from './pages/product/addproduct/addproduct.compo
     RegisterComponent,
     LoginComponent,
     HomeComponent,
-    AddproductComponent
+    AddproductComponent,
+    CardComponent,
+    AllComponent,
+    LogoutComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -10,16 +10,30 @@
                   </li>
     
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="register" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}">Register</a>
+                    <a class="nav-link active" aria-current="page" routerLink="register"  *ngIf="!_user.isLoggedIn">Register</a>
                   </li>
     
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="/login" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}">Login</a>
+                    <a class="nav-link active"  aria-current="page" routerLink="/login"  *ngIf="!_user.isLoggedIn">Login</a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/editProfile" *ngIf="_user.isLoggedIn">
+                      <button class="btn btn-primary">{{_user.userData.name}} profile</button> 
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/logout" *ngIf="_user.isLoggedIn">
+                      <button class="btn btn-danger" (click)="logout()">
+                        Logout
+                      </button>
+                    </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" routerLink="addproducts" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}">Add Product</a>
                   </li>
-                  
+
+              
               </ul>
             </div>
             </div>

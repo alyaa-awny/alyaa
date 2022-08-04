@@ -70,14 +70,14 @@ msg =""
   AddProduct(){
     this.isSubmitted= true
     if (this.addProduct.valid){
-      this._product.AddProduct(this.addProduct.value)
-      // .subscribe(
-      //   (res)=> console.log(res),
-      //   (err)=> this.msg = err.error.data
-      //   ()=>{
-      //     this._router.navigateByUrl("/")
-      //   }
-      // )
+      this._product.add(this.addProduct.value)
+      .subscribe(
+        (res)=> console.log(res),
+        (err)=> this.msg = err.error.data,
+        ()=>{
+          this._router.navigateByUrl("/")
+        }
+      )
     }
   }
 }

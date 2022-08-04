@@ -13,13 +13,10 @@ export class LoginComponent implements OnInit {
   loginForm = new FormGroup({
   email:new FormControl('',[
     Validators.required,
-    Validators.minLength(5)
   ]),
 
   password:new FormControl('',[
     Validators.required,
-    Validators.pattern(''),
-    Validators.minLength(8)
   ])
 
   })
@@ -32,7 +29,7 @@ export class LoginComponent implements OnInit {
 
 
   onLogin(){
-   
+   console.log("test")
     if(this.loginForm.valid){
       this._user.login(this.loginForm.value)
       .subscribe(res=>console.log(res)        
